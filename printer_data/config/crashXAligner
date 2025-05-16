@@ -1,0 +1,24 @@
+G90; use absolute positioning for the XYZ axes
+G28; Home
+G1 Z227 F1500; Fast move !!!!!!!!!!!!!!!![CHANGE THIS]!!!!!!!!!!!!!!!! Your max height - 10
+M211 S0; Disable software endstops
+M84; Disable steppers
+M906 Z190; Set weak current for Z
+M906 I1 Z190; Set weak current for Z
+M906 ; Show current for debug
+G4 S2; Wait 2 seconds for apply current
+
+G91 ; Relative positions
+G1 Z25 F200; Align
+G90 ; Absolute positions
+M211 S1; Enable software endstops
+M84 ; Disable steppers
+
+M906 Z500; Set your Z current here !!!!!!!!!!!!!!!![CHANGE THIS]!!!!!!!!!!!!!!!! Your current for Z
+M906 I1 Z500; Set your Z current here!!!!!!!!!!!!!!!![CHANGE THIS]!!!!!!!!!!!!!!!! Your current for Z
+M906; Show current for debug
+G4 S2; Wait 2 seconds for apply current
+
+G28; Home
+G1 Z100 F1000
+M84 ; Disable steppers
